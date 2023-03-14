@@ -18,7 +18,7 @@
 
         public RabbitMQConsumer(string queueName, Func<T, bool> messageHandler)
         {
-            var factory = new ConnectionFactory() { Uri = new Uri("amqps://ipdtkeay:tUL2vsfcjAOvPeFBdT6XGahZrKl-58Pz@jackal.rmq.cloudamqp.com/ipdtkeay") };
+            var factory = new ConnectionFactory() { Uri = new Uri("") };
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
             _channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);

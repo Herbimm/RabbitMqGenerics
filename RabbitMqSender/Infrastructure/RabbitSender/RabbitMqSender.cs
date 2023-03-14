@@ -14,7 +14,7 @@
 
         public RabbitMQSender(string hostname, string queueName, int maxRetries = 3, TimeSpan? retryInterval = null)
         {
-            var factory = new ConnectionFactory() { Uri = new Uri("amqps://ipdtkeay:tUL2vsfcjAOvPeFBdT6XGahZrKl-58Pz@jackal.rmq.cloudamqp.com/ipdtkeay") };
+            var factory = new ConnectionFactory() { Uri = new Uri("") };
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
             _channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
